@@ -1,26 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <button class="filled" @click="openPopup('inviteOtherPopup')">Invite other</button>
+  <InviteOthersPopup />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { basePopupFunctional } from '@/composables/popup/BasePopupFunctional.js'
+
+import InviteOthersPopup from "@/components/popups/inviteOthersPopup.vue"
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'HomePage',
+  components: { InviteOthersPopup },
+  setup() {
+    const { openPopup } = basePopupFunctional()
+    return {
+      openPopup,
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss" scoped>
 </style>

@@ -1,0 +1,33 @@
+.vfm::v-deep {
+  .vfm {
+    &__overlay {
+      background: #00000052;
+    }
+    &__content {
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: transparent; 
+      }
+      overflow-y: scroll;
+      position: absolute;
+      top: 20px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+      width: 100%;
+      max-width: max-content;
+      height: max-content;
+      max-height: 94.6vh;
+      background: $antique-white;
+      border-radius: 6px;
+      padding: 28px 19px  26px 24px;
+      box-sizing: border-box;
+    }
+  }
+}
